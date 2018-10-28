@@ -1,12 +1,22 @@
 import java.util.Scanner;
 import java.util.Random;
+import javax.swing.*;
 
 
 public class TicTacToe {
 
     public static final Random RANDOM = new Random();
 
+    public static final gameGUI gui = new gameGUI();
+
     public static void main (String[] args){
+
+        JFrame window = new JFrame("Tic-Tac-Toe");
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.getContentPane().add(gui);
+        window.setBounds(300,200,300,300);
+        window.setVisible(true);
+
 
         Board game = new Board();
         Scanner scanner = new Scanner(System.in);

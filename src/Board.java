@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,7 +77,7 @@ public class Board {
     public void displayBoard() {
         System.out.println();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0, buttonNumber = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 String value = "?";
 
@@ -86,12 +87,21 @@ public class Board {
                     value = "O";
 
                 System.out.print(value + " ");
+
+                TicTacToe.gui.updateButton(value, buttonNumber);
+                buttonNumber++;
+
+
             }
 
             System.out.println();
         }
 
         System.out.println();
+
+
+
+
 
     }
 
